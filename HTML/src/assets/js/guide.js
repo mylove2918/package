@@ -1,13 +1,13 @@
-import data from '../data/guide.json' assert { type: 'json' };
+import pgData from '../data/guide.json' assert { type: 'json' };
 
 ('use strict');
 
 const guide = {
   pgList: {
-    pgData: data.pgList,
+    data: pgData.pgList,
     init() {
       const $target = document.querySelector('.pg-list__tbody');
-      this.pgData.forEach(res => {
+      this.data.forEach(res => {
         $target.innerHTML += `
         <tr class="pg-list__tr">
           <td class="pg-list__td">${res.category}</td>
