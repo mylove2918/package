@@ -1,0 +1,292 @@
+@@include('../html/common/head.html')
+
+<div class="sp-guide">
+  <header>
+    <div class="menu js-menu mo-only">
+      <button class="icon-barger st-white" title="메뉴">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <button class="icon-close st-white" title="닫기"></button>
+    </div>
+    <h1><a href="./sp_guide.html">스파크 플러스 가이드</a></h1>
+  </header>
+  <aside>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <p class="nav__title"><a href="#guide-publish" class="is-active">퍼블리셔 가이드</a></p>
+          <ul class="nav__sub-list">
+            <li class="nav__sub-item"><a href="javascript:;" title=".vscode">vscode</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".class-naming">class naming</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".git">git</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".ally">접근성</a></li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <p class="nav__title"><a href="#guide-design">공통 디자인</a></p>
+          <ul class="nav__sub-list">
+            <li class="nav__sub-item"><a href="javascript:;" title=".button">버튼</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".icon">아이콘</a></li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <p class="nav__title"><a href="#guide-module">모듈</a></p>
+          <ul class="nav__sub-list">
+            <li class="nav__sub-item"><a href="javascript:;" title=".dropdown">Dropdown</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".form">form</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".swiper">swiper</a></li>
+            <li class="nav__sub-item"><a href="javascript:;" title=".tab">tab</a></li>
+          </ul>
+        </li>
+      </ul>
+      <p class="signature">by. jhYang</p>
+    </nav>
+  </aside>
+  <div id="guide-publish" class="guide-container is-active">
+    <section class="vscode">
+      <h2 class="guide-container__title">vs code</h2>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">기본 설정</h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">기본적인 vs code의 공백은 '2'로 설정한다.</li>
+          <li class="guide-container__item">Prettier 확장 프로그램을 사용하여, 코드의 통일성을 맞춘다.</li>
+        </ul>
+      </div>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">유용한 vs code 확장 프로그램<span>*필수</span></h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode" class="st-highlight">Prettier (코드 자동 나열)</a>
+          </li>
+          <li class="guide-container__item">
+            <a href="https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph" class="st-highlight">Git Graph (브랜치를 직관적인 그래프로 보여주는 확장 프로그램)</a>
+          </li>
+          <li class="guide-container__item">
+            <a href="https://marketplace.visualstudio.com/items?itemName=BracketPairColorDLW.bracket-pair-color-dlw">Bracket Pair Color DLW (열림태그와 닫힘태그의 구분을 컬러로 쉽게 보여주는 확장 프로그램)</a></li>
+          <li class="guide-container__item">
+            <a href="https://marketplace.visualstudio.com/items?itemName=Box-Of-Hats.bemhelper" class="st-highlight">BEM Helper (BEM 방법론 유효성 여부 체크를 도와주는 확장 프로그램)</a></li>
+          <li class="guide-container__item">
+            <a href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag">Auto Rename Tag (태그의 수정이 있을 경우 자동으로 열림태그와 닫힘태그 둘다 수정을 도와줌)</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="class-naming">
+      <h2 class="guide-container__title">class naming</h2>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">네이밍 규칙</h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">모든 class 네이밍 규칙은 BEM(Block Element Modifier) 방법론에 의해 작성되어야 한다. <a href="https://nykim.work/15" target="_blank" class="st-highlight">link</a></li>
+          <li class="guide-container__item">일반적인 블록,엘리먼트가 아닌 경우 접두사를 이용해 기능의 정의를 확실히 구분한다. <a href="https://nohack.tistory.com/53" target="_blank" class="st-highlight">link</a></li>
+          <li class="guide-container__item">전체 공통(common) class를 수정 및 추가 할 경우, 반드시 프로젝트 팀원에게 알려야 한다.(slick 또는 kakao)</li>
+          <li class="guide-container__item">
+            개인 페이지 작업 시 최상단의 class명은 main태그의 class를 따라야한다.(중복 방지)
+            <xmp>
+              //html
+  
+              <main class="exname">
+                <div class="content">
+                  <p class="content__title">hello</p>
+                </div>
+              </main>
+            </xmp>
+            <xmp>
+              //sass
+  
+              .exname{
+                .content{
+                  &__title{}
+                }
+              }
+            </xmp>
+          </li>
+          <li class="guide-container__item">한 페이지에 여러명의 작업자가 붙을 경우, 해당 페이지에서 공통으로 사용할 class명은 각 작업자와의 회의를 통해 정한다.</li>
+          <li class="guide-container__item">기본적으로 common에 구성되어있는 img-box / sr-only / mo-only / pc-only 등 활용한다.</li>
+          <li class="guide-container__item">자신만 알아볼 수 있는 class명이 아닌 '명확한 목적성'을 가져야 한다. (ex: main__title,main__list,main__title--large / 잘못된 ex: main__jhstyle, addstyle-01)</li>
+        </ul>
+      </div>
+    </section>
+    <section class="git">
+      <h2 class="guide-container__title">git</h2>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">git 브랜치</h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">git 브랜치는 main / develop 으로 구성 되어있다. main : 최종 QA까지 마친 작업물 브랜치 , develop : 퍼블리싱 작업의 가장 최신버전</li>
+          <li class="guide-container__item">개인 페이지 작업시에는 develop 브랜치에서 새 브랜치를 생성 후 작업한다.</li>
+          <li class="guide-container__item">커밋 메세지는 '페이지명 : 내용' 으로 명확하게 기재한다.</li>
+          <li class="guide-container__item">한 페이지에 여러 작업자가 작업 할 경우 머지 전에 수정 내역 공유 후 머지 한다(충돌 방지)</li>
+          <li class="guide-container__item">develop에 머지 후에 프로젝트 작업자 전원에게 머지 완료 안내를 해야한다.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="ally">
+      <h2 class="guide-container__title">접근성</h2>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">접근성에 관하여</h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">img태그의 alt 속성은 이미지내 텍스트가 존재할 때 필히 기재한다.</li>
+          <li class="guide-container__item">동작이 들어가는 button은 button태그를 사용하여 작성한다.</li>
+          <li class="guide-container__item">목적에 맞는 마크업 태그를 사용한다.</li>
+          <li class="guide-container__item">이미지,아이콘에 설명 또는 타이틀이 필요한 경우 <xmp><span class="sr-only">아이콘</span></xmp> 해당 방식으로 접근성을 준수한다.</li>
+          <li class="guide-container__item">on/off 기능이 있는 radio 또는 checkbox가 있을 경우 선택이 완료되었을 때 <xmp><span class="sr-only">선택됨</span></xmp> 해당 방식으로 선택이 되었음을 표기한다.</li>
+          <li class="guide-container__item">독립 태그는 뒤에 태그닫힘을 표기한다. <xmp><img src="" alt=""/> <br/> </xmp> (해당 방식을 준수하는 이유는 개발 환경으로 넘어갔을 때 문법을 맞추기 위함)</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <div id="guide-design" class="guide-container">
+    <section class="button">
+      <h2 class="guide-container__title">버튼</h2>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">좋아요버튼</h3>
+        <p style="font-size: 1.2rem; line-height: 1.2;">icon-heart에 width , height 값을 지정해주셔야 합니다</p>
+        <p style="font-size: 1.2rem; line-height: 1.2;">heart-count에 font-size, color를 지정해주셔야 합니다</p>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <button class="btn-heart">
+              <div class="icon-heart" style="width: 2.5rem; height: 2.5rem;"><span class="sr-only">좋아요</span></div>
+              <p class="heart-count">1234567</p>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="icon">
+      <h2 class="guide-container__title">아이콘</h2>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">blog</h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <a href="#" class="icon-blog"><span class="sr-only">네이버 블로그</span></a>
+          </li>
+        </ul>
+      </div>
+      <div class="l-area">
+        <h3  class="guide-container__sub-title">arrow icon</h3>
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <div class="icon-arrow icon-arrow--right"><span class="sr-only">우측 화살표 아이콘</span></div>
+            <div class="icon-arrow icon-arrow--bottom"><span class="sr-only">아래 화살표 아이콘</span></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+  <div id="guide-module" class="guide-container">
+    <section class="dropdown">
+      <h2 class="guide-container__title">dropdown</h2>
+      <div class="l-area">
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <p>추후 개발</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="form">
+      <h2 class="guide-container__title">form</h2>
+      <div class="l-area">
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <p>추후 개발</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="swiper">
+      <h2 class="guide-container__title">swiper</h2>
+      <div class="l-area">
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <p>추후 개발</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="tab">
+      <h2 class="guide-container__title">tab</h2>
+      <div class="l-area">
+        <ul class="guide-container__list">
+          <li class="guide-container__item">
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+            <p>추후 개발</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  $(function(){
+
+    var mainTitle = $('.nav__title a');
+    var subTitle = $('.nav__sub-item a');
+    var container = $('.guide-container');
+
+    $(mainTitle).click(function(){
+      var $this = $(this);
+      var href = $this.attr('href');
+      $(mainTitle).removeClass('is-active');
+      $this.addClass('is-active');
+      
+      $('.guide-container').removeClass('is-active');
+      $(href).addClass('is-active');
+    });
+    
+    $(subTitle).click(function(){
+      var $this = $(this);
+      var mainTitleTarget = $this.parents('.nav__sub-list').prev().children();
+      var href = mainTitleTarget.attr('href');
+
+      $('.guide-container').removeClass('is-active');
+      $(mainTitle).removeClass('is-active');
+      $(mainTitleTarget).addClass('is-active');
+      $(href).addClass('is-active');
+
+      var title = $this.attr('title');
+      var offset = $(title).offset();
+      $('html,body').animate({scrollTop: offset.top - 100}, 400);
+    });
+        
+    function navClose(){
+      $('.js-menu .icon-close').css('display','none');
+      $('.js-menu .icon-barger').css('display','flex');
+      $('.nav').css('display','none');
+    }
+    
+    function navOpen(){
+      $('.js-menu .icon-barger').css('display','none');
+      $('.js-menu .icon-close').css('display','block');
+      $('.nav').css('display','flex');
+    }
+
+    $('.js-menu .icon-barger').click(function(){
+      navOpen();
+    });
+
+    $('.js-menu .icon-close').click(function(){
+      navClose();
+    });
+    
+    if($(window).width() <= 768){
+      $(mainTitle).click(function(){
+        navClose();
+      });
+      $(subTitle).click(function(){
+        navClose();
+      });
+    }
+
+  });
+</script>
