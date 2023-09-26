@@ -1,4 +1,8 @@
-/* COLORS */
+// 해상도
+$display_pc: 1440px;
+$display_mo: 768px;
+
+// COLORS
 $col_primary: #111;
 $col_primary_light: #222;
 $col_warning: #ff777d;
@@ -11,13 +15,13 @@ $col_font_01: #111;
 $col_font_02: #222;
 $col_font_03: #333;
 
-/* FONTS */
+// FONTS
 $font_family_default: 'NotoSans' !important;
 $font_size_10: 1rem;
 $font_size_12: 1.2rem;
 $font_size_14: 1.4rem;
 
-/* SPACING */
+// SPACING
 $space_10: 1rem;
 $space_20: 2rem;
 $space_30: 3rem;

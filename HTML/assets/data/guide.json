@@ -1,0 +1,7 @@
+{
+  "pgList": [
+    { "category": "가이드", "depth_1": "프로젝트 가이드", "depth_2": "", "depth_3": "", "depth_4": "", "depth_5": "", "type": "", "directory": "./guide/guide.html", "date": "", "etc": "" },
+    { "category": "메인", "depth_1": "메인", "depth_2": "", "depth_3": "", "depth_4": "", "depth_5": "", "type": "", "directory": "./main/main.html", "date": "", "etc": "" },
+    { "category": "카테고리", "depth_1": "", "depth_2": "", "depth_3": "", "depth_4": "", "depth_5": "", "type": "", "directory": "", "date": "", "etc": "" }
+  ]
+}

@@ -1,0 +1,42 @@
+@import './reset';
+@import './var';
+
+// 페이지 리스트
+.pg-list {
+  &__table {
+    position: relative;
+  }
+  &__thead {
+  }
+  &__tbody {
+  }
+  &__tr {
+  }
+  &__th {
+    position: sticky;
+    top: 0;
+  }
+  &__td {
+  }
+
+  @media screen and (max-width: $display_mo) {
+    & {
+    }
+    &__table {
+    }
+    &__thead {
+    }
+    &__tbody {
+    }
+    &__tr {
+    }
+    &__th {
+    }
+    &__td {
+    }
+  }
+}
+
+// 프로젝트 가이드
+.pr-guide {
+}

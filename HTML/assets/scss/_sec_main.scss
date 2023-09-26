@@ -1,0 +1,8 @@
+.project {
+  .sec-main {
+    @media screen and (max-width: $display_mo) {
+      & {
+      }
+    }
+  }
+}
