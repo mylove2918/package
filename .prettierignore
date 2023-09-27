@@ -1,2 +1,5 @@
 *.md
 dist/
+
+Gulp.js/**/header.html
+Gulp.js/**/footer.html
