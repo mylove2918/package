@@ -3,6 +3,7 @@
 <br />
 
 ## 1. 프로젝트 세팅
++ VS Code 설치
 + 필요한 VS Code 확장 프로그램
   - Live Sass Compiler
 <br />

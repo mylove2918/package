@@ -1,11 +1,14 @@
 # FE 개발 모듈
 
 ## 1. 작성 완료 모듈
-+ 
++ HTML 문서 내부에서 script로 include 하는 기능
 
 
 ## 2. 작성 예정 모듈
 + 탭 메뉴
+  - 콘텐츠 show/hide
++ 앵커드 메뉴
+  - 해당 콘텐츠 영역으로 이동
 + 아코디언
   - 하나 열면 하나 닫기
   - 하나 열어도 계속 열기
@@ -30,10 +33,12 @@
   - 폰트 사이즈 등
 + 영역 구분용 하단 회색 줄
 + 컬러 팔레트
-+ Chart.js
 + 모바일 하단 메뉴바
 + 모바일 햄버거 메뉴
-+ Carousel
++ Carousel.js
++ Chart.js
 + Swiper.js
 + Slick.js
 + Fancybox.js
++ Fullpage.js
++ SyntaxHighlighter
