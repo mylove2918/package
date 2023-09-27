@@ -16,11 +16,8 @@ function moduleInclude(data) {
     // 공통 사이드바 쓰기
     sidebarHtml += `<h2 class="module-sidebar__title">${data.currCategory.toUpperCase()}</h2>`;
     sidebarHtml += `<ul class="module-sidebar__list">`;
-    if (data.currCategory === 'Modules') {
-      targetData = data.module;
-    } else if (data.currCategory === 'Library') {
-      targetData = data.library;
-    }
+
+    data.currCategory === 'Modules' ? (targetData = data.module) : (targetData = data.library);
     targetData.forEach(res => {
       const activeTitle = $targetSidebar.dataset.sidebarActive;
       sidebarHtml += `<li class="module-sidebar__item">`;
