@@ -9,15 +9,15 @@ const tabs = function () {
         const $contents = document.querySelectorAll('[data-tab-content]');
 
         $tabs.forEach(tabs => {
-          const $tab = {
+          const tab = {
             name: tabs.dataset.tab,
             initial: tabs.dataset.tabInit,
             trigger: tabs.querySelectorAll('[data-tab-index]'),
           };
-          const $tabContent = document.querySelector('[data-tab-content="' + $tab.name + '"]');
+          const $tabContent = document.querySelector('[data-tab-content="' + tab.name + '"]');
           const $contents = $tabContent.querySelectorAll('[data-tab-index]');
           function contentDisplay(index) {
-            $tab.trigger.forEach(tab => {
+            tab.trigger.forEach(tab => {
               tab.dataset.tabIndex === index ? tab.classList.add('on') : tab.classList.remove('on');
             });
             $contents.forEach(content => {
@@ -26,9 +26,9 @@ const tabs = function () {
             });
           }
 
-          contentDisplay($tab.initial);
+          contentDisplay(tab.initial);
 
-          $tab.trigger.forEach(trigger => {
+          tab.trigger.forEach(trigger => {
             trigger.addEventListener('click', el => {
               trigger.classList.add('on');
               const tabIndex = trigger.dataset.tabIndex;
