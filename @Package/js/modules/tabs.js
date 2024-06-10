@@ -1,42 +1,34 @@
-// tab 기능
 const tabs = function () {
   window.addEventListener('load', () => {
-    const $allElements = document.getElementsByTagName('*');
-    Array.prototype.forEach.call($allElements, function (el) {
-      const tab = el.dataset.tab;
-      if (tab) {
-        const $tabs = document.querySelectorAll('[data-tab]');
-        const $contents = document.querySelectorAll('[data-tab-content]');
+    const $tabs = document.querySelectorAll('[data-tab]');
+    // console.log('Tabs found:', $tabs.length);
 
-        $tabs.forEach(tabs => {
-          const tab = {
-            name: tabs.dataset.tab,
-            initial: tabs.dataset.tabInit,
-            trigger: tabs.querySelectorAll('[data-tab-index]'),
-          };
-          const $tabContent = document.querySelector('[data-tab-content="' + tab.name + '"]');
-          const $contents = $tabContent.querySelectorAll('[data-tab-index]');
-          function contentDisplay(index) {
-            tab.trigger.forEach(tab => {
-              tab.dataset.tabIndex === index ? tab.classList.add('on') : tab.classList.remove('on');
-            });
-            $contents.forEach(content => {
-              const contIndex = content.dataset.tabIndex;
-              contIndex === index ? content.classList.add('on') : content.classList.remove('on');
-            });
-          }
+    $tabs.forEach(tabElement => {
+      const tabName = tabElement.dataset.tab;
+      const initialIndex = tabElement.dataset.tabInit;
+      const $triggers = tabElement.querySelectorAll('[data-tab-index]');
+      const $tabContent = document.querySelector(`[data-tab-content="${tabName}"]`);
+      const $contents = $tabContent.querySelectorAll('[data-tab-index]');
 
-          contentDisplay(tab.initial);
-
-          tab.trigger.forEach(trigger => {
-            trigger.addEventListener('click', el => {
-              trigger.classList.add('on');
-              const tabIndex = trigger.dataset.tabIndex;
-              contentDisplay(tabIndex);
-            });
-          });
+      const contentDisplay = index => {
+        $triggers.forEach(trigger => {
+          trigger.classList.toggle('on', trigger.dataset.tabIndex === index);
         });
-      }
+        $contents.forEach(content => {
+          content.classList.toggle('on', content.dataset.tabIndex === index);
+        });
+      };
+
+      // Initialize tabs
+      contentDisplay(initialIndex);
+
+      // Add event listeners
+      $triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+          const tabIndex = trigger.dataset.tabIndex;
+          contentDisplay(tabIndex);
+        });
+      });
     });
   });
 };

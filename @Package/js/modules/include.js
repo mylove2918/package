@@ -1,18 +1,26 @@
-// include 기능
 const include = function () {
-  window.addEventListener('load', () => {
-    const $allElements = document.getElementsByTagName('*');
-    Array.prototype.forEach.call($allElements, function (el) {
+  window.addEventListener('load', async () => {
+    const $includes = document.querySelectorAll('[data-include]');
+    // console.log($includes);
+
+    const fetchIncludeContent = async (el, url) => {
+      try {
+        const response = await fetch(url);
+        if (response.ok) {
+          const html = await response.text();
+          el.outerHTML = html;
+        } else {
+          console.error('Failed to fetch content from', url);
+        }
+      } catch (error) {
+        console.error('Error fetching content:', error);
+      }
+    };
+
+    $includes.forEach(el => {
       const include = el.dataset.include;
       if (include) {
-        const xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            el.outerHTML = this.responseText;
-          }
-        };
-        xhttp.open('GET', include, true);
-        xhttp.send();
+        fetchIncludeContent(el, include);
       }
     });
   });

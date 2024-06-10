@@ -1,12 +1,27 @@
-// accordion 기능
 const accordion = function () {
   window.addEventListener('load', () => {
-    const $allElements = document.getElementsByTagName('*');
-    Array.prototype.forEach.call($allElements, function (el) {
-      const accordion = el.dataset.accordion;
-      if (accordion) {
-        // 기능 작성
-      }
+    const $accordions = document.querySelectorAll('[data-accordion]');
+
+    $accordions.forEach(el => {
+      const type = el.dataset.accordion;
+      const names = el.querySelectorAll('.acco-name');
+
+      names.forEach(name => {
+        name.addEventListener('click', () => {
+          const listItem = name.closest('li');
+          const isOpen = listItem.classList.contains('open');
+
+          if (type === 'single') {
+            el.querySelectorAll('li').forEach(item => {
+              item.classList.remove('open');
+            });
+          }
+
+          if (!isOpen || type !== 'single') {
+            listItem.classList.toggle('open');
+          }
+        });
+      });
     });
   });
 };

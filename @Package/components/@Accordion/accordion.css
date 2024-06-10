@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.accordion {
+  padding: 20px;
+}
+.accordion [data-accordion] li .acco-name {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+.accordion [data-accordion] li .acco-name span {
+  display: block;
+  max-width: calc(100% - 30px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.accordion [data-accordion] li .acco-name::after {
+  content: "";
+  display: block;
+  width: 0px;
+  height: 0px;
+  margin-left: auto;
+  border-style: solid;
+  border-width: 10px 5px 0 5px;
+  border-color: #000000 transparent transparent transparent;
+  transform: rotate(0deg);
+}
+.accordion [data-accordion] li .acco-cont {
+  display: none;
+}
+.accordion [data-accordion] li.open .acco-name::after {
+  transform: rotate(180deg);
+}
+.accordion [data-accordion] li.open .acco-cont {
+  display: block;
+  padding: 20px;
+  background: #f5f5f5;
+  margin-bottom: 20px;
+}
+
+/*# sourceMappingURL=accordion.css.map */
