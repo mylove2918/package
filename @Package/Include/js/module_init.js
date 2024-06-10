@@ -1,4 +1,4 @@
-import { moduleInclude } from '../../@Include/js/module_include.js';
+import { moduleInclude } from './module_include.js';
 
 ('use strict');
 
