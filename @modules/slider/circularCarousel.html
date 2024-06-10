@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../@Include/css/modules.css" />
+    <title>Swiper.js - Circular Carousel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <h1>Swiper.js <span>Circular Carousel Test</span></h1>
+    <hr />
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide slide-1">Slide 1</div>
+        <div class="swiper-slide slide-2">Slide 2</div>
+        <div class="swiper-slide slide-3">Slide 3</div>
+        <div class="swiper-slide slide-4">Slide 4</div>
+        <div class="swiper-slide slide-5">Slide 5</div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="button-wrap">
+      <button class="collapse" onclick="collapse()">Collapse</button>
+      <button class="collapse" onclick="grow()">Grow</button>
+      <button class="collapse" onclick="stop()">Stop</button>
+      <button class="collapse" onclick="start()">Start</button>
+    </div>
+  </body>
+  <script>
+    const $swiperContainer = document.querySelector('.swiper-container');
+    const options_1 = {
+      loop: true,
+      initialSlide: 0,
+      slidesPerView: 1.5,
+      centeredSlides: true,
+      speed: 1000,
+      // autoplay: {
+      //   delay: 1000,
+      // },
+      effect: 'creative',
+      creativeEffect: {
+        limitProgress: 2,
+        prev: {
+          translate: ['-105%', '-20%', 0],
+        },
+        next: {
+          translate: ['105%', '-20%', 0],
+        },
+      },
+    };
+    const options_2 = {
+      loop: true,
+      initialSlide: 0,
+      slidesPerView: 1.5,
+      centeredSlides: true,
+      speed: 1000,
+      // autoplay: {
+      //   delay: 1000,
+      // },
+      effect: 'creative',
+      creativeEffect: {
+        limitProgress: 2,
+        prev: {
+          translate: ['-105%', 0, 0],
+        },
+        next: {
+          translate: ['105%', 0, 0],
+        },
+      },
+    };
+
+    let mySwiper = new Swiper($swiperContainer, options_1);
+
+    function collapse() {
+      $swiperContainer.classList.add('collapsed');
+      mySwiper.destroy();
+      mySwiper = new Swiper($swiperContainer, options_2);
+    }
+    function grow() {
+      $swiperContainer.classList.remove('collapsed');
+      mySwiper.destroy();
+      mySwiper = new Swiper($swiperContainer, options_1);
+    }
+    function stop() {
+      mySwiper.autoplay.stop();
+    }
+    function start() {
+      mySwiper.autoplay.start();
+    }
+  </script>
+  <style>
+    html {
+      font-size: 10px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 3.2rem;
+      font-weight: bold;
+    }
+    h1 span {
+      display: block;
+      font-weight: normal;
+      font-size: 1.8rem;
+    }
+    .swiper-container {
+      margin-top: 3rem;
+      width: 100%;
+      padding-top: 4rem;
+      overflow-x: hidden;
+      overflow-y: visible;
+    }
+    .swiper-container.collapsed {
+      padding-top: 0;
+    }
+    .swiper-container.collapsed .swiper-slide-active {
+      margin-top: 0;
+    }
+    .swiper-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 20rem;
+      font-size: 2rem;
+      border-radius: 1.6rem;
+    }
+    .swiper-slide-prev,
+    .swiper-slide-next {
+    }
+    .slide-1 {
+      background: aquamarine;
+    }
+    .slide-2 {
+      background: bisque;
+    }
+    .slide-3 {
+      background: cornflowerblue;
+    }
+    .slide-4 {
+      background: darkkhaki;
+    }
+    .slide-5 {
+      background: gold;
+    }
+    .button-wrap {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .collapse {
+      flex: 1;
+      height: 4rem;
+      background-color: limegreen;
+      border-radius: 1.6rem;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</html>
