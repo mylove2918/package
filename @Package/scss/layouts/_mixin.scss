@@ -1,0 +1,23 @@
+// 모바일 VW 변환
+@function vw-mo($val, $device-width: 720px) {
+  @return calc(($val * 100vw) / $device-width);
+
+  // @media screen and (max-width: 720px) {
+  //   div {
+  //     margin: vw-mo(20px) auto;
+  //     padding: vw-mo(30px) vw-mo(50px) vw-mo(100px);
+  //     font-size: vw-mo(14px);
+  //   }
+  // }
+}
+
+// PC VW 변환
+@function vw-pc($val, $device-width: 2000px) {
+  @return calc(($val * 100vw) / $device-width);
+
+  // div {
+  //   margin: vw-pc(20px) auto;
+  //   padding: vw-pc(30px) vw-pc(50px) vw-pc(100px);
+  //   font-size: vw-pc(14px);
+  // }
+}

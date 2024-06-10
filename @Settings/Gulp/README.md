@@ -8,6 +8,7 @@
   - Live Sass Compiler
 + Node.js 설치 (필요 버전 : v11.15.0)
 + gulp-cli, gulp 설치
++ 빌드 명령어는 gulp
 <br />
 <br />
 

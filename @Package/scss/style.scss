@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+// Layouts
+@import './layouts/variables';
+@import './layouts/mixin';
+@import './layouts/fonts';
+@import './layouts/reset';
+@import './layouts/common';
+
+// Views
+@import './views/main.scss';
