@@ -1,12 +1,16 @@
 # FE 개발 패키지
 
 ## 1. 작성 완료
-+ [모듈] HTML 문서 내부에서 script로 include 하는 기능
++ [모듈]
+  + include
+  + tabs
+&nbsp;<br />
+&nbsp;<br />
++ [라이브러리]
+  + Fancybox.js
 
 
 ## 2. 작성 예정
-+ 탭 메뉴
-  - 콘텐츠 show/hide
 + 앵커드 메뉴
   - 해당 콘텐츠 영역으로 이동
 + 아코디언
@@ -39,6 +43,5 @@
 + Chart.js
 + Swiper.js
 + Slick.js
-+ Fancybox.js
 + Fullpage.js
 + SyntaxHighlighter

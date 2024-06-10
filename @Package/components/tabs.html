@@ -5,5 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tabs</title>
   </head>
-  <body></body>
+  <body>
+    <div class="tabs">
+      <h2>탭 메뉴 1</h2>
+      <p>기본 노출 : 콘텐츠 1</p>
+      <br />
+      <nav data-tab="tab1" data-tab-init="0">
+        <ul>
+          <li><a data-tab-index="0">탭 1</a></li>
+          <li><a data-tab-index="1">탭 2</a></li>
+          <li><a data-tab-index="2">탭 3</a></li>
+        </ul>
+      </nav>
+
+      <section data-tab-content="tab1">
+        <div data-tab-index="0">콘텐츠 1</div>
+        <div data-tab-index="1">콘텐츠 2</div>
+        <div data-tab-index="2">콘텐츠 3</div>
+      </section>
+
+      <br /><br /><br />
+
+      <h2>텝 메뉴 2</h2>
+      <p>기본 노출 : 콘텐츠 3</p>
+      <br />
+      <nav data-tab="tab2" data-tab-init="2">
+        <ul>
+          <li><a data-tab-index="0">탭 1</a></li>
+          <li><a data-tab-index="1">탭 2</a></li>
+          <li><a data-tab-index="2">탭 3</a></li>
+        </ul>
+      </nav>
+
+      <section data-tab-content="tab2">
+        <div data-tab-index="0">콘텐츠 1</div>
+        <div data-tab-index="1">콘텐츠 2</div>
+        <div data-tab-index="2">콘텐츠 3</div>
+      </section>
+    </div>
+
+    <script src="../js/module.js" type="module"></script>
+
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+      .tabs {
+        padding: 20px;
+      }
+      [data-tab] {
+        overflow-x: auto;
+        /* 스와이퍼 적용 추천 */
+      }
+      [data-tab] ul {
+        display: flex;
+        flex-wrap: nowrap;
+      }
+      [data-tab] ul li {
+        flex-shrink: 0;
+        margin-right: 30px;
+      }
+      [data-tab] [data-tab-index] {
+        cursor: pointer;
+      }
+      [data-tab] [data-tab-index].on {
+        font-weight: bold;
+      }
+      [data-tab-content] {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100px;
+        margin-top: 20px;
+        background-color: #f5f5f5;
+      }
+      [data-tab-content] > div {
+        display: none;
+      }
+      [data-tab-content] > div.on {
+        display: block;
+      }
+    </style>
+  </body>
 </html>
