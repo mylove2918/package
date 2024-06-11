@@ -41,7 +41,13 @@
 + 모바일 햄버거 메뉴
 + Carousel.js
 + Chart.js
++ Highcharts
 + Swiper.js
 + Slick.js
 + Fullpage.js
 + SyntaxHighlighter
+
+
+## 3. Memo
++ 웹 서버 사용하는 방법 (PHP)
++ Java Spring 공부
