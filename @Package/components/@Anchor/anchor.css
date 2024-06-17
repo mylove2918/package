@@ -1,0 +1,47 @@
+body {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.anchor nav {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 50px;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 2;
+}
+.anchor nav a {
+  cursor: pointer;
+}
+.anchor nav a.on {
+  color: red;
+  font-weight: bold;
+}
+.anchor div[id^=cont],
+.anchor div[class^=cont] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500px;
+}
+.anchor div[id^=cont]:nth-of-type(odd),
+.anchor div[class^=cont]:nth-of-type(odd) {
+  background: #f7f7f7;
+}
+.anchor div[id^=cont]:nth-of-type(even),
+.anchor div[class^=cont]:nth-of-type(even) {
+  background: #eee;
+}
+
+/*# sourceMappingURL=anchor.css.map */

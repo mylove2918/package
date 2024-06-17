@@ -7,7 +7,7 @@ const moduleInit = {
   data: {},
   init() {
     accordion();
-    anchor();
+    anchor(50);
     include();
     tabs();
   },

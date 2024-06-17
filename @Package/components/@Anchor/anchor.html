@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anchor</title>
+    <script src="../../js/module.js" type="module"></script>
+    <link rel="stylesheet" type="text/css" href="./anchor.css" />
+  </head>
+  <body>
+    <div class="anchor">
+      <nav>
+        <a data-anchor="#cont-1" class="on">1</a>
+        <a data-anchor=".cont-2">2</a>
+        <a data-anchor="#cont-3">3</a>
+        <a data-anchor=".cont-4">4</a>
+        <a data-anchor="#cont-5">5</a>
+      </nav>
+      <div id="cont-1">Content 1</div>
+      <div class="cont-2">Content 2</div>
+      <div id="cont-3">Content 3</div>
+      <div class="cont-4">Content 4</div>
+      <div id="cont-5">Content 5</div>
+    </div>
+
+    <script>
+      document.querySelectorAll('nav a').forEach(el => {
+        el.addEventListener('click', e => {
+          const $this = e.target;
+          const $siblings = $this.parentNode.querySelectorAll('a');
+          $siblings.forEach(sibling => {
+            sibling.classList.remove('on');
+          });
+          $this.classList.add('on');
+        });
+      });
+    </script>
+  </body>
+</html>
