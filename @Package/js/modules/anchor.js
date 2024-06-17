@@ -5,8 +5,10 @@ const anchor = function (offset = 0) {
     $anchors.forEach(anchorEl => {
       anchorEl.addEventListener('click', e => {
         e.preventDefault(); // 기본 동작 방지
+
         const targetSelector = e.target.dataset.anchor;
         const $target = document.querySelector(targetSelector);
+
         if ($target) {
           const targetPosition = $target.getBoundingClientRect().top + window.pageYOffset - offset;
           window.scrollTo({
